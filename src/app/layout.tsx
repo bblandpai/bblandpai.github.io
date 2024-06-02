@@ -1,15 +1,17 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Metadata } from 'next';
 import * as React from 'react';
 
 import './globals.css';
 
-import { siteConfig } from '@/constant/config';
-import { ErrorProvider } from '@/context/ErrorContext';
-import RootLayoutContent from '@/components/layout/RootLayoutContent';
 import { FacebookSDKInitializer } from '@/components/fb';
+import Gtag from '@/components/google';
+import RootLayoutContent from '@/components/layout/RootLayoutContent';
+
+import { siteConfig } from '@/constant/config';
 import { FACEBOOK_APP_ID, GA_TRACKING_ID } from '@/constant/env';
+import { ErrorProvider } from '@/context/ErrorContext';
 import { TrackingProvider } from '@/context/TrackingContext';
-import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -57,8 +59,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Suspense fallback={<div>Loading...</div>}>
-          <TrackingProvider>
+      <TrackingProvider>
             <ErrorProvider>
               <RootLayoutContent>
                 <div className="flex-grow flex flex-col items-center">
@@ -68,11 +69,14 @@ export default function RootLayout({
               </RootLayoutContent>
             </ErrorProvider>
           </TrackingProvider>
+          {/* <Gtag/> */}
           {FACEBOOK_APP_ID && (
             <FacebookSDKInitializer appId={FACEBOOK_APP_ID} />
           )}
-        </Suspense>
       </body>
+      {GA_TRACKING_ID && (
+        <GoogleAnalytics gaId={GA_TRACKING_ID} />
+      )}
     </html>
   );
 }

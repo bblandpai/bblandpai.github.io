@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { useError } from '@/context/ErrorContext';
 import React from 'react';
 import ModalAlert from '@/components/modal';
-import { UpdateVersion } from '@/components/modal/UpdateApp';
+import Gtag from '../google';
 
 const RootLayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { errorMessage, isModalOpen, clearError, modalAction } = useError();
