@@ -56,6 +56,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  console.log('GA_TRACKING_ID', GA_TRACKING_ID);
+
   return (
     <html>
       <body>
@@ -70,13 +73,13 @@ export default function RootLayout({
             </ErrorProvider>
           </TrackingProvider>
           {/* <Gtag/> */}
-          {FACEBOOK_APP_ID && (
-            <FacebookSDKInitializer appId={FACEBOOK_APP_ID} />
-          )}
       </body>
-      {GA_TRACKING_ID && (
-        <GoogleAnalytics gaId={GA_TRACKING_ID} />
+      {FACEBOOK_APP_ID && (
+        <FacebookSDKInitializer appId={FACEBOOK_APP_ID} />
       )}
+      {/* {GA_TRACKING_ID && (
+        <GoogleAnalytics gaId={GA_TRACKING_ID} />
+      )} */}
     </html>
   );
 }
