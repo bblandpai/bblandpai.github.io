@@ -1,4 +1,4 @@
-import { sendGTMEvent } from '@next/third-parties/google'
+import { sendGAEvent } from '@next/third-parties/google'
 import React, { useState } from 'react';
 
 import './style.css';
@@ -21,7 +21,7 @@ const DownloadButton: React.FC<LoadingButtonProps> = ({ downloadLink, gameName }
   const [error, setError] = useState<string | null>(null);
 
   const handleClick = async () => {
-    sendGTMEvent({ event: 'click_download', value: truncateLabel(gameName) })
+    sendGAEvent({ event: 'click_download', value: truncateLabel(gameName) });
     // handle loading
     setIsLoading(true);
     setError(null);
