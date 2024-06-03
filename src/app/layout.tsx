@@ -1,15 +1,13 @@
-import { GoogleAnalytics } from '@next/third-parties/google'
 import { Metadata } from 'next';
 import * as React from 'react';
 
 import './globals.css';
 
 import { FacebookSDKInitializer } from '@/components/fb';
-import Gtag from '@/components/google';
 import RootLayoutContent from '@/components/layout/RootLayoutContent';
 
 import { siteConfig } from '@/constant/config';
-import { FACEBOOK_APP_ID, GA_TRACKING_ID } from '@/constant/env';
+import { FACEBOOK_APP_ID } from '@/constant/env';
 import { ErrorProvider } from '@/context/ErrorContext';
 import { TrackingProvider } from '@/context/TrackingContext';
 
@@ -56,8 +54,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-  console.log('GA_TRACKING_ID', GA_TRACKING_ID);
 
   return (
     <html>

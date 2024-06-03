@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NextImage from 'next/image';
 import './style.css';
 
 interface ImageProps {
@@ -9,6 +10,7 @@ interface ImageProps {
 }
 
 const Image: React.FC<ImageProps> = ({ src, alt, fallbackSrc, className }) => {
+  const [currentSrc, setCurrentSrc] = useState(src);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -17,8 +19,10 @@ const Image: React.FC<ImageProps> = ({ src, alt, fallbackSrc, className }) => {
   };
 
   const handleError = () => {
-    setError(true);
-    setLoading(false);
+    if (!error) {
+      setError(true);
+      setCurrentSrc(fallbackSrc);
+    }
   };
 
   return (
@@ -28,10 +32,12 @@ const Image: React.FC<ImageProps> = ({ src, alt, fallbackSrc, className }) => {
           <div className="loader" />
         </div>
       )}
-      <img
-        src={error ? fallbackSrc : src}
+      <NextImage
+        src={currentSrc}
         alt={alt}
-        onLoad={handleLoad}
+        layout="fill"
+        objectFit="cover"
+        onLoadingComplete={handleLoad}
         onError={handleError}
         className={`${loading ? 'hidden' : 'block'} w-full h-full object-cover`}
       />

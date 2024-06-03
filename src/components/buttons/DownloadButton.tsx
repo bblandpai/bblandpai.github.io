@@ -1,8 +1,10 @@
+import { sendGTMEvent } from '@next/third-parties/google'
 import React, { useState } from 'react';
+
 import './style.css';
-import { useTracking } from '@/context/TrackingContext';
-import { Tracking } from '@/types/tracking';
+
 import useEventTracker from '@/hooks/useEventTracker';
+
 import { useQueryParams } from '@/context/QueryParamsContext';
 
 interface LoadingButtonProps {
@@ -10,20 +12,16 @@ interface LoadingButtonProps {
   gameName: string;
 }
 
+const truncateLabel = (label: string, maxLength = 500): string => {
+  return label.length > maxLength ? label.substring(0, maxLength) : label;
+};
+
 const DownloadButton: React.FC<LoadingButtonProps> = ({ downloadLink, gameName }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const { trackEvent } = useEventTracker();
-  const { userId, countryCode, deviceType } = useQueryParams();
 
   const handleClick = async () => {
-    if (userId) trackEvent('download_click', {
-      userId: userId,
-      gameName: gameName,
-      countryCode: countryCode || '',
-      deviceType: deviceType || '',
-      timestamp: new Date().getTime()
-    });
+    sendGTMEvent({ event: 'click_download', value: truncateLabel(gameName) })
     // handle loading
     setIsLoading(true);
     setError(null);
