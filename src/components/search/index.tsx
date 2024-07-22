@@ -20,16 +20,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ categories, searchTerm, setSearch
           className="px-4 py-2 rounded-lg border border-gray-300 w-full sm:w-2/3 lg:w-1/2"
         />
       </div>
-      <div className="flex justify-center space-x-4 text-white flex-wrap w-full">
-        {categories.map(category => (
-          <span
-            key={category}
-            className={`cursor-pointer hover:text-gray-300 ${category === selectedCategory ? "text-gray-500" : ""}`} // Highlight selected category
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </span>
-        ))}
+      <div className="w-full overflow-x-auto">
+        <div className="flex justify-start space-x-4 text-white flex-nowrap py-2 px-4">
+          {categories.map(category => (
+            <span
+              key={category}
+              className={`cursor-pointer hover:text-gray-300 whitespace-nowrap ${category === selectedCategory ? "text-gray-500" : ""}`} // Highlight selected category
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

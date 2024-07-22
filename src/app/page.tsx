@@ -3,8 +3,9 @@
 import * as React from 'react';
 import '@/lib/env';
 
-import { QueryParamsProvider } from '@/context/QueryParamsContext';
 import { Home } from '@/components/home';
+
+import { QueryParamsProvider } from '@/context/QueryParamsContext';
 
 export default function HomePage() {
   return (
