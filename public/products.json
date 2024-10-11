@@ -179,34 +179,6 @@
     "isPopular": false
   },
   {
-    "url": "/roms/gameboy-advance/kirby-the-amazing-mirror/",
-    "image": "/images/gameboy-advance_kirby-the-amazing-mirror.jpg",
-    "name": "Kirby & The Amazing Mirror",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Kirby ROMs"
-    ],
-    "id": "22",
-    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Kirby &amp; The Amazing Mirror (U).zip",
-    "downloaded": "18216",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/mario-kart-super-circuit/",
-    "image": "/images/gameboy-advance_mario-kart-super-circuit.jpg",
-    "name": "Mario Kart Super Circuit",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Mario ROMs"
-    ],
-    "id": "18",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Mario Kart Super Circuit (U) [!].zip",
-    "downloaded": "17916",
-    "isPopular": false
-  },
-  {
     "url": "/roms/gameboy-advance/dragonball-advanced-adventure/",
     "image": "/images/gameboy-advance_dragonball-advanced-adventure.jpg",
     "name": "Dragonball - Advanced Adventure",
@@ -2116,20 +2088,6 @@
     "isPopular": false
   },
   {
-    "url": "/roms/gameboy-advance/kirby-and-the-amazing-mirror/",
-    "image": "/images/gameboy-advance_kirby-and-the-amazing-mirror.jpg",
-    "name": "Kirby And The Amazing Mirror",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Kirby ROMs"
-    ],
-    "id": "291",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Kirby And The Amazing Mirror (E)(Rising Sun).zip",
-    "downloaded": "5805",
-    "isPopular": false
-  },
-  {
     "url": "/roms/gameboy-advance/breath-of-fire/",
     "image": "/images/gameboy-advance_breath-of-fire.jpg",
     "name": "Breath Of Fire",
@@ -3055,20 +3013,6 @@
     "id": "603",
     "downloadLink": "https://server.emulatorgames.net/roms/gameboy-advance/TMNT (E)(Lightforce).zip",
     "downloaded": "97",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/kirby-nightmare-in-dreamland-surplus/",
-    "image": "/images/gameboy-advance_kirby-nightmare-in-dreamland-surplus.jpg",
-    "name": "Kirby - Nightmare In Dreamland (Surplus)",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Kirby ROMs"
-    ],
-    "id": "466",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Kirby - Nightmare in Dreamland (E)(Surplus).zip",
-    "downloaded": "89",
     "isPopular": false
   },
   {
