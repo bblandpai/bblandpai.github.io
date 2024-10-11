@@ -56,48 +56,6 @@
     "isPopular": false
   },
   {
-    "url": "/roms/gameboy-advance/pokemon-leaf-green-version-v11/",
-    "image": "/images/gameboy-advance_pokemon-leaf-green-version-v1-1.jpg",
-    "name": "Pokemon - Leaf Green Version (V1.1)",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Pokemon ROMs"
-    ],
-    "id": "4",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Pokemon - Leaf Green Version (U) (V1.1).zip",
-    "downloaded": "22840",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/pokemon-jupiter-604-ruby-hack/",
-    "image": "/images/gameboy-advance_pokemon-jupiter-6-04-ruby-hack.jpg",
-    "name": "Pokemon Jupiter - 6.04 (Ruby Hack)",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Pokemon ROMs"
-    ],
-    "id": "7",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Pokemon Jupiter - 6.04 (Ruby Hack).zip",
-    "downloaded": "22288",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/super-mario-advance-4-super-mario-bros-3-v11/",
-    "image": "/images/gameboy-advance_super-mario-advance-4-super-mario-bros-3-v1-1.jpg",
-    "name": "Super Mario Advance 4 - Super Mario Bros. 3 (V1.1)",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Mario ROMs"
-    ],
-    "id": "5",
-    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Super Mario Advance 4 - Super Mario Bros. 3 (U) (V1.1).zip",
-    "downloaded": "20898",
-    "isPopular": false
-  },
-  {
     "url": "/roms/gameboy-advance/legend-of-zelda-the-the-minish-cap/",
     "image": "/images/gameboy-advance_legend-of-zelda-the-the-minish-cap.jpg",
     "name": "Legend Of Zelda, The - The Minish Cap",
@@ -166,33 +124,6 @@
     "isPopular": false
   },
   {
-    "url": "/roms/gameboy-advance/kirby-nightmare-in-dreamland/",
-    "image": "/images/gameboy-advance_kirby-nightmare-in-dreamland.jpg",
-    "name": "Kirby - Nightmare In Dreamland",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Kirby ROMs"
-    ],
-    "id": "16",
-    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Kirby - Nightmare in Dreamland (U) [!].zip",
-    "downloaded": "18446",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/dragonball-z-supersonic-warriors/",
-    "image": "/images/gameboy-advance_dragonball-z-supersonic-warriors.jpg",
-    "name": "Dragonball Z - Supersonic Warriors",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators"
-    ],
-    "id": "14",
-    "downloadLink": "https://server.emulatorgames.net/roms/gameboy-advance/Dragonball Z - Supersonic Warriors GBA.zip",
-    "downloaded": "18995",
-    "isPopular": false
-  },
-  {
     "url": "/roms/gameboy-advance/classic-nes-super-mario-bros/",
     "image": "/images/gameboy-advance_classic-nes-super-mario-bros.jpg",
     "name": "Classic NES - Super Mario Bros.",
@@ -245,6 +176,34 @@
     "id": "39",
     "downloadLink": "https://server.emulatorgames.net/roms/gameboy-advance/Fire Emblem (U) [!].zip",
     "downloaded": "17410",
+    "isPopular": false
+  },
+  {
+    "url": "/roms/gameboy-advance/kirby-the-amazing-mirror/",
+    "image": "/images/gameboy-advance_kirby-the-amazing-mirror.jpg",
+    "name": "Kirby & The Amazing Mirror",
+    "categories": [
+      "Gameboy Advance ROMs",
+      "Gameboy Advance Emulators",
+      "Kirby ROMs"
+    ],
+    "id": "22",
+    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Kirby &amp; The Amazing Mirror (U).zip",
+    "downloaded": "18216",
+    "isPopular": false
+  },
+  {
+    "url": "/roms/gameboy-advance/mario-kart-super-circuit/",
+    "image": "/images/gameboy-advance_mario-kart-super-circuit.jpg",
+    "name": "Mario Kart Super Circuit",
+    "categories": [
+      "Gameboy Advance ROMs",
+      "Gameboy Advance Emulators",
+      "Mario ROMs"
+    ],
+    "id": "18",
+    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Mario Kart Super Circuit (U) [!].zip",
+    "downloaded": "17916",
     "isPopular": false
   },
   {
@@ -3896,6 +3855,33 @@
     "id": "314",
     "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Looney Tunes - Back in Action (U) (M5).zip",
     "downloaded": "60",
+    "isPopular": false
+  },
+  {
+    "url": "/roms/gameboy-advance/pokemon-leaf-green-cezar/",
+    "image": "/images/gameboy-advance_pokemon-leaf-green-cezar.jpg",
+    "name": "Pokemon Leaf Green (Cezar)",
+    "categories": [
+      "Gameboy Advance ROMs",
+      "Gameboy Advance Emulators",
+      "Pokemon ROMs"
+    ],
+    "id": "411",
+    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Pokemon Leaf Green (J)(Cezar).zip",
+    "downloaded": "72",
+    "isPopular": false
+  },
+  {
+    "url": "/roms/gameboy-advance/bat-man-vengeance/",
+    "image": "/images/gameboy-advance_bat-man-vengeance.jpg",
+    "name": "Bat-Man - Vengeance",
+    "categories": [
+      "Gameboy Advance ROMs",
+      "Gameboy Advance Emulators"
+    ],
+    "id": "120",
+    "downloadLink": "https://server.emulatorgames.net/roms/gameboy-advance/Bat-Man - Vengeance GBA.zip",
+    "downloaded": "40",
     "isPopular": false
   },
   {
