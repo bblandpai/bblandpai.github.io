@@ -248,34 +248,6 @@
     "isPopular": false
   },
   {
-    "url": "/roms/gameboy-advance/kirby-the-amazing-mirror/",
-    "image": "/images/gameboy-advance_kirby-the-amazing-mirror.jpg",
-    "name": "Kirby & The Amazing Mirror",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Kirby ROMs"
-    ],
-    "id": "22",
-    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Kirby &amp; The Amazing Mirror (U).zip",
-    "downloaded": "18216",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/mario-kart-super-circuit/",
-    "image": "/images/gameboy-advance_mario-kart-super-circuit.jpg",
-    "name": "Mario Kart Super Circuit",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Mario ROMs"
-    ],
-    "id": "18",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Mario Kart Super Circuit (U) [!].zip",
-    "downloaded": "17916",
-    "isPopular": false
-  },
-  {
     "url": "/roms/gameboy-advance/dragonball-advanced-adventure/",
     "image": "/images/gameboy-advance_dragonball-advanced-adventure.jpg",
     "name": "Dragonball - Advanced Adventure",
@@ -3924,33 +3896,6 @@
     "id": "314",
     "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Looney Tunes - Back in Action (U) (M5).zip",
     "downloaded": "60",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/pokemon-leaf-green-cezar/",
-    "image": "/images/gameboy-advance_pokemon-leaf-green-cezar.jpg",
-    "name": "Pokemon Leaf Green (Cezar)",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Pokemon ROMs"
-    ],
-    "id": "411",
-    "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Pokemon Leaf Green (J)(Cezar).zip",
-    "downloaded": "72",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/bat-man-vengeance/",
-    "image": "/images/gameboy-advance_bat-man-vengeance.jpg",
-    "name": "Bat-Man - Vengeance",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators"
-    ],
-    "id": "120",
-    "downloadLink": "https://server.emulatorgames.net/roms/gameboy-advance/Bat-Man - Vengeance GBA.zip",
-    "downloaded": "40",
     "isPopular": false
   },
   {
