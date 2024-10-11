@@ -286,20 +286,6 @@
     "isPopular": false
   },
   {
-    "url": "/roms/gameboy-advance/mario-luigi-superstar-saga/",
-    "image": "/images/gameboy-advance_mario-luigi-superstar-saga.jpg",
-    "name": "Mario & Luigi - Superstar Saga",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Mario ROMs"
-    ],
-    "id": "26",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Mario &amp; Luigi - Superstar Saga (U).zip",
-    "downloaded": "17269",
-    "isPopular": false
-  },
-  {
     "url": "/roms/gameboy-advance/yu-gi-oh-the-sacred-cards/",
     "image": "/images/gameboy-advance_yu-gi-oh-the-sacred-cards.jpg",
     "name": "Yu-Gi-Oh! - The Sacred Cards",
@@ -890,20 +876,6 @@
     "id": "62",
     "downloadLink": "https://serve.emulatorgames.net/roms/gameboy-advance/Kingdom Hearts - Chain of Memories (U).zip",
     "downloaded": "17098",
-    "isPopular": false
-  },
-  {
-    "url": "/roms/gameboy-advance/mario-vs-donkey-kong/",
-    "image": "/images/gameboy-advance_mario-vs-donkey-kong.jpg",
-    "name": "Mario Vs. Donkey Kong",
-    "categories": [
-      "Gameboy Advance ROMs",
-      "Gameboy Advance Emulators",
-      "Mario ROMs"
-    ],
-    "id": "65",
-    "downloadLink": "https://static.emulatorgames.net/roms/gameboy-advance/Mario vs. Donkey Kong (U) [!].zip",
-    "downloaded": "15240",
     "isPopular": false
   },
   {
