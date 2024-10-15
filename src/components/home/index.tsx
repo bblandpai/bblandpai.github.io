@@ -84,7 +84,7 @@ export const Home: FC<HomeProps> = ({ isShowUpdate }) => {
               selectedCategory={selectedCategory}
               categories={categories}
             />
-            {selectedCategory === 'All' && searchTerm === '' && (
+            {/* {selectedCategory === 'All' && searchTerm === '' && (
               <>
                 <h2 className="text-center mt-10">Popular Products</h2>
                 <section className="mt-10">
@@ -106,8 +106,8 @@ export const Home: FC<HomeProps> = ({ isShowUpdate }) => {
                   </div>
                 </section>
               </>
-            )}
-            <h2 className="text-center mt-10">{selectedCategory === 'All' ? 'All Products' : selectedCategory}</h2>
+            )} */}
+            {/* <h2 className="text-center mt-10">{selectedCategory === 'All' ? 'All Products' : selectedCategory}</h2> */}
             <section className="mt-10">
               <div className="container mx-auto">
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6">

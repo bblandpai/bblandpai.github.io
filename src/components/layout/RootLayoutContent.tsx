@@ -15,7 +15,7 @@ const RootLayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }
 
   return (
     <>
-    <main className={cn('flex flex-col min-h-screen w-full')}>
+    <main className={cn('flex flex-col min-h-screen w-full overflow-x-hidden')}>
       <ModalAlert
         message={errorMessage || ''}
         isOpen={isModalOpen}

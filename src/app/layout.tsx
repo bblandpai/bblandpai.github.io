@@ -12,6 +12,13 @@ import { ErrorProvider } from '@/context/ErrorContext';
 import { TrackingProvider } from '@/context/TrackingContext';
 
 export const metadata: Metadata = {
+  viewport: {
+    width: 'device-width, shrink-to-fit=yes',
+    minimumScale: 1,
+    initialScale: 1,
+    userScalable: false,
+    maximumScale: 1,
+  },
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
@@ -58,17 +65,17 @@ export default function RootLayout({
   return (
     <html>
       <body>
-      <TrackingProvider>
-            <ErrorProvider>
-              <RootLayoutContent>
-                <div className="flex-grow flex flex-col items-center">
-                  {/* <Header /> */}
-                  {children}
-                </div>
-              </RootLayoutContent>
-            </ErrorProvider>
-          </TrackingProvider>
-          {/* <Gtag/> */}
+        <TrackingProvider>
+          <ErrorProvider>
+            <RootLayoutContent>
+              <div className="flex-grow flex flex-col items-center">
+                {/* <Header /> */}
+                {children}
+              </div>
+            </RootLayoutContent>
+          </ErrorProvider>
+        </TrackingProvider>
+        {/* <Gtag/> */}
       </body>
       {FACEBOOK_APP_ID && (
         <FacebookSDKInitializer appId={FACEBOOK_APP_ID} />
