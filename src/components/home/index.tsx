@@ -28,6 +28,7 @@ export const Home: FC<HomeProps> = ({ isShowUpdate }) => {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       try {
         const response = await fetch('/products.json');
         if (!response.ok) {
