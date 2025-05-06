@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 interface ModalAlertProps {
@@ -39,10 +37,7 @@ const ModalAlert: React.FC<ModalAlertProps> = ({ message, isOpen, onClose, onAct
             <div className="flex justify-end space-x-4">
               {onAction && (
                 <button
-                  onClick={() => {
-                    onAction();
-                    onClose();
-                  }}
+                  onClick={onAction}
                   className="retro-button text-xs"
                 >
                   RETRY
@@ -62,4 +57,4 @@ const ModalAlert: React.FC<ModalAlertProps> = ({ message, isOpen, onClose, onAct
   );
 };
 
-export default ModalAlert;
+export default ModalAlert; 

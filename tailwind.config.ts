@@ -7,6 +7,9 @@ export default {
     extend: {
       fontFamily: {
         primary: ['Quicksand', ...defaultTheme.fontFamily.sans],
+        'retro': ['"Press Start 2P"', 'cursive'],
+        'retro-text': ['VT323', 'monospace'],
+        'retro-alt': ['Silkscreen', 'cursive'],
       },
       colors: {
         primary: {
@@ -24,6 +27,43 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#222222',
+        retro: {
+          'purple': '#7b00ff',
+          'cyan': '#00f0ff',
+          'pink': '#ff00ff',
+          'yellow': '#ffff00',
+          'blue': '#0080ff',
+          'green': '#33ff33',
+          'orange': '#ff8000',
+          'black': '#000033',
+          'bg': '#000440',
+        },
+        'retro-bg': 'var(--color-retro-bg)',
+        'retro-black': 'var(--color-retro-black)',
+        'retro-cyan': 'var(--color-cyan-neon)',
+        'retro-pink': 'var(--color-pink-neon)',
+        'retro-purple': 'var(--color-purple-neon)',
+        'retro-yellow': 'var(--color-yellow-neon)',
+        'retro-blue': 'var(--color-retro-blue)',
+        'retro-green': 'var(--color-retro-green)',
+        'retro-orange': 'var(--color-retro-orange)',
+        'retro-teal': 'var(--color-retro-teal)',
+      },
+      backgroundImage: () => ({
+        'grid-lines':
+          'linear-gradient(var(--color-grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px)',
+      }),
+      backgroundSize: {
+        'grid-30': '30px 30px',
+      },
+      fontSize: {
+        '2xs': '0.625rem', // 10px
+      },
+      lineHeight: {
+        'extra-loose': '2.5',
+      },
+      spacing: {
+        '9/16': '56.25%',
       },
       keyframes: {
         flicker: {
@@ -45,10 +85,28 @@ export default {
             backgroundPosition: '700px 0',
           },
         },
+        blink: {
+          '0%, 49%': { opacity: '1' },
+          '50%, 100%': { opacity: '0' },
+        },
+        glitch: {
+          '0%, 100%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-5px, 5px)' },
+          '40%': { transform: 'translate(-5px, -5px)' },
+          '60%': { transform: 'translate(5px, 5px)' },
+          '80%': { transform: 'translate(5px, -5px)' },
+        }
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+        blink: 'blink 1s step-end infinite',
+        glitch: 'glitch 0.5s ease-in-out infinite',
+      },
+      boxShadow: {
+        'retro-neon': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f0ff, 0 0 20px #00f0ff, 0 0 25px #00f0ff',
+        'retro-card': '5px 5px 0px #00f0ff',
+        'retro-card-hover': '8px 8px 0px #ff00ff',
       },
     },
   },

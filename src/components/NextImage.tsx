@@ -31,9 +31,8 @@ export default function NextImage({
   classNames,
   ...rest
 }: NextImageProps) {
-  const [status, setStatus] = React.useState(
-    useSkeleton ? 'loading' : 'complete'
-  );
+  // Always set status to complete to avoid blur effect
+  const [status, setStatus] = React.useState('complete');
   const widthIsSet = className?.includes('w-') ?? false;
 
   return (
@@ -43,8 +42,7 @@ export default function NextImage({
     >
       <Image
         className={cn(
-          classNames?.image,
-          status === 'loading' && cn('animate-pulse', classNames?.blur)
+          classNames?.image
         )}
         src={src}
         width={width}

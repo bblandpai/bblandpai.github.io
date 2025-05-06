@@ -1,46 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-purple-neon: #7b00ff;
+  --color-cyan-neon: #00f0ff;
+  --color-pink-neon: #ff00ff;
+  --color-yellow-neon: #ffff00;
+  --color-retro-blue: #0080ff;
+  --color-retro-green: #33ff33;
+  --color-retro-orange: #ff8000;
+  --color-retro-black: #000033;
+  --color-retro-pink: #ff6699;
+  --color-retro-teal: #33cccc;
+  --color-retro-bg: #000440;
+  --color-grid-line: rgba(99, 179, 237, 0.15);
+}
+
 @layer base {
-  /* inter var - latin */
+  /* VT323 and Press Start 2P - classic retro fonts */
   @font-face {
-    font-family: "Quicksand";
+    font-family: "VT323";
+  }
+
+  @font-face {
+    font-family: "Press Start 2P";
+  }
+
+  @font-face {
+    font-family: "Silkscreen";
   }
 
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
 
+  body {
+    background-color: var(--color-retro-bg);
+    background-image: 
+      linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: white;
+  }
+
   /* #region  /**=========== Typography =========== */
   .h0 {
-    @apply font-primary text-3xl font-bold md:text-5xl;
+    @apply font-retro text-3xl font-bold md:text-5xl;
   }
 
   h1,
   .h1 {
-    @apply font-primary text-2xl font-bold md:text-4xl;
+    @apply font-retro text-2xl font-bold md:text-4xl;
   }
 
   h2,
   .h2 {
-    @apply font-primary text-xl font-bold md:text-3xl;
+    @apply font-retro text-xl font-bold md:text-3xl;
   }
 
   h3,
   .h3 {
-    @apply font-primary text-lg font-bold md:text-2xl;
+    @apply font-retro text-lg font-bold md:text-2xl;
   }
 
   h4,
   .h4 {
-    @apply font-primary text-base font-bold md:text-lg;
+    @apply font-retro text-base font-bold md:text-lg;
   }
 
   body,
   .p {
-    @apply font-primary text-sm md:text-base;
+    @apply font-retro-text text-sm md:text-base;
+  }
+  
+  /* Text size for extra small text on mobile */
+  .text-2xs {
+    font-size: 0.625rem; /* 10px */
+    line-height: 0.75rem; /* 12px */
   }
   /* #endregion  /**======== Typography =========== */
 
@@ -58,6 +96,174 @@
   .min-h-main {
     @apply min-h-[calc(100vh-56px)];
   }
+  
+  /* Fixed header styles */
+  header.fixed {
+    box-shadow: 0 0 15px var(--color-cyan-neon), 
+                0 0 25px rgba(0, 0, 0, 0.2);
+    animation: header-glow 4s infinite alternate;
+  }
+  
+  @keyframes header-glow {
+    0% {
+      box-shadow: 0 0 10px var(--color-cyan-neon), 
+                  0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 15px var(--color-pink-neon), 
+                  0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+  }
+  
+  /* Shadow for neon elements */
+  .shadow-retro-neon {
+    box-shadow: 0 0 15px var(--color-cyan-neon), 
+                0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Retro border styles */
+  .retro-border {
+    @apply border-4 border-white relative;
+    box-shadow: 0 0 0 4px var(--color-retro-black),
+                0 0 0 6px white,
+                0 0 10px 0 var(--color-cyan-neon),
+                inset 0 0 10px 0 var(--color-cyan-neon);
+  }
+  
+  /* Mobile optimized retro border */
+  @media (max-width: 640px) {
+    .retro-border {
+      @apply border-2 border-white;
+      box-shadow: 0 0 0 2px var(--color-retro-black),
+                  0 0 0 3px white,
+                  0 0 5px 0 var(--color-cyan-neon),
+                  inset 0 0 5px 0 var(--color-cyan-neon);
+    }
+  }
+  
+  /* Neon text effect */
+  .neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 
+                 0 0 10px #fff, 
+                 0 0 15px var(--color-cyan-neon),
+                 0 0 20px var(--color-cyan-neon),
+                 0 0 25px var(--color-cyan-neon);
+  }
+  
+  /* Mobile optimized neon text */
+  @media (max-width: 640px) {
+    .neon-text {
+      text-shadow: 0 0 3px #fff, 
+                  0 0 5px #fff, 
+                  0 0 8px var(--color-cyan-neon),
+                  0 0 10px var(--color-cyan-neon);
+    }
+  }
+  
+  /* Retro button styles */
+  .retro-button {
+    @apply font-retro px-6 py-2 text-white relative overflow-hidden;
+    background-color: var(--color-retro-black);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--color-retro-black),
+                4px 4px 0 0 var(--color-cyan-neon);
+    transform: translate(-2px, -2px);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  
+  /* Mobile optimized retro button */
+  @media (max-width: 640px) {
+    .retro-button {
+      @apply px-3 py-1;
+      border: 1px solid white;
+      box-shadow: 0 0 0 1px var(--color-retro-black),
+                  2px 2px 0 0 var(--color-cyan-neon);
+      transform: translate(-1px, -1px);
+    }
+  }
+  
+  .retro-button:hover {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 2px var(--color-retro-black),
+                2px 2px 0 0 var(--color-cyan-neon);
+  }
+  
+  .retro-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 2px var(--color-retro-black),
+                0 0 0 0 var(--color-cyan-neon);
+  }
+  
+  /* Mobile optimized button hover/active */
+  @media (max-width: 640px) {
+    .retro-button:hover {
+      box-shadow: 0 0 0 1px var(--color-retro-black),
+                  1px 1px 0 0 var(--color-cyan-neon);
+    }
+    
+    .retro-button:active {
+      transform: translate(1px, 1px);
+    }
+  }
+  
+  /* Pagination styles */
+  .active-page {
+    animation: active-page-glow 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes active-page-glow {
+    from {
+      box-shadow: 0 0 5px var(--color-cyan-neon);
+    }
+    to {
+      box-shadow: 0 0 15px var(--color-pink-neon), 0 0 20px var(--color-pink-neon);
+    }
+  }
+  
+  /* Mobile optimized active-page glow */
+  @media (max-width: 640px) {
+    @keyframes active-page-glow {
+      from {
+        box-shadow: 0 0 2px var(--color-cyan-neon);
+      }
+      to {
+        box-shadow: 0 0 8px var(--color-pink-neon), 0 0 10px var(--color-pink-neon);
+      }
+    }
+  }
+  
+  .pagination-container {
+    position: relative;
+  }
+  
+  .pagination-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px dashed var(--color-retro-cyan);
+    opacity: 0.3;
+    animation: pagination-border-pulse 4s linear infinite;
+    pointer-events: none;
+  }
+  
+  /* Mobile optimized pagination container */
+  @media (max-width: 640px) {
+    .pagination-container::before {
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+  }
+  
+  @keyframes pagination-border-pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+  }
 }
 
 @layer utilities {
@@ -65,8 +271,8 @@
     background-image: linear-gradient(#33333300, #33333300),
       linear-gradient(
         to right,
-        var(--color-primary-400),
-        var(--color-primary-500)
+        var(--color-cyan-neon),
+        var(--color-purple-neon)
       );
     background-size: 100% 2px, 0 2px;
     background-position: 100% 100%, 0 100%;
@@ -85,6 +291,36 @@
   }
 }
 
+/* Retro scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-retro-bg);
+  border-left: 1px solid var(--color-cyan-neon);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-cyan-neon);
+  border: 2px solid var(--color-retro-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pink-neon);
+}
+
+/* Mobile optimized scrollbar */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border: 1px solid var(--color-retro-bg);
+  }
+}
+
 body {
-    font-family: 'Quicksand';
+  font-family: 'VT323', monospace;
 }

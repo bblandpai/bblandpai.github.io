@@ -42,21 +42,39 @@ const DownloadButton: React.FC<LoadingButtonProps> = ({ downloadLink, gameName }
     <div>
       <button
         onClick={handleClick}
-        className={`bg-black text-white rounded-md cursor-pointer p-2 w-full text-center block flex justify-center items-center transition duration-300 transform ${isLoading ? 'bg-gray-700' : ''} active:scale-95`}
+        className={`retro-button text-2xs sm:text-xs md:text-sm font-retro-alt uppercase tracking-wider w-full py-1 sm:py-2 px-2 sm:px-4 flex justify-center items-center ${
+          isLoading ? 'bg-retro-black cursor-not-allowed' : 'bg-retro-black hover:bg-retro-pink'
+        }`}
         disabled={isLoading}
       >
         {isLoading ? (
           <>
-            <div className="spinner mr-2"></div>
-            Downloading
+            <div className="retro-loader w-2 h-2 sm:w-3 sm:h-3 mr-1 sm:mr-2"></div>
+            <span className="animate-pulse">LOADING...</span>
           </>
         ) : (
-          'Download Now'
+          <>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>DOWNLOAD</span>
+          </>
         )}
       </button>
       {error && (
-        <div className="mt-2 text-red-500 text-center">
-          {error}
+        <div className="mt-1 sm:mt-2 text-retro-pink text-center font-retro-text text-xs">
+          ERROR: {error}
         </div>
       )}
     </div>
