@@ -62,8 +62,18 @@ const DownloadButton: React.FC<LoadingButtonProps> = ({ downloadLink, gameName }
       
       iframe.src = link;
       
-      // Mở tab mới với link tải
-      window.open(link, '_blank');
+      // Tạo link tải xuống trực tiếp thay vì mở tab mới
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = link;
+      // Lấy tên file từ URL
+      const fileName = link.substring(link.lastIndexOf('/') + 1);
+      a.setAttribute('download', fileName);
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+      }, 100);
     });
   };
 
