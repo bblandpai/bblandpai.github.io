@@ -11,7 +11,7 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
   pageNumber,
   currentPage,
   onClick,
-  isEllipsis = falses
+  isEllipsis = false
 }) => {
   if (isEllipsis) {
     return (
