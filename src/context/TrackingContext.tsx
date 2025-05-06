@@ -24,16 +24,30 @@ export const TrackingProvider = ({ children }: { children: React.ReactNode }) =>
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
-    pageview(url);
+    if (typeof window === 'undefined') return;
+    
+    try {
+      const url = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+      pageview(url);
+    } catch (error) {
+      console.error('Error tracking page view:', error);
+    }
   }, [pathname, searchParams]);
 
   const trackPageView = (url: string) => {
-    pageview(url);
+    try {
+      pageview(url);
+    } catch (error) {
+      console.error('Error tracking page view:', error);
+    }
   };
 
   const trackEvent = (action: string, category: string, label: string, value?: number) => {
-    event({ action, category, label, value });
+    try {
+      event({ action, category, label, value });
+    } catch (error) {
+      console.error('Error tracking event:', error);
+    }
   };
 
   return (
