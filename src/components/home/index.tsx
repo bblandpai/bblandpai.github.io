@@ -156,7 +156,7 @@ export const Home: FC<HomeProps> = ({ isShowUpdate }) => {
               
               <section className="mb-6">
                 <div className="w-full">
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3 gap-y-5 sm:gap-x-4 sm:gap-y-6">
                     {currentProducts.map(product => (
                       <GameCard
                         key={product.id}

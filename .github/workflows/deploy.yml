@@ -27,7 +27,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -68,12 +68,10 @@ jobs:
           static_site_generator: next
       - name: Build with Next.js
         run: pnpm next build
-      - name: Upload Pages artifact (v2 safe)
-        uses: actions/upload-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
           path: ./out
-
 
   # Deployment job
   deploy:

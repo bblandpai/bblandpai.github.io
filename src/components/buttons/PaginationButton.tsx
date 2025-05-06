@@ -11,7 +11,7 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
   pageNumber,
   currentPage,
   onClick,
-  isEllipsis = false
+  isEllipsis = falses
 }) => {
   if (isEllipsis) {
     return (
@@ -34,7 +34,7 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
       aria-label={`Page ${pageNumber}`}
       aria-current={isActive ? 'page' : undefined}
     >
-      {pageNumber}
+      {pageNumber} 
     </button>
   );
 };
