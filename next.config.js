@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: process.env.NODE_ENV !== "production" ? undefined : "export", 
+  output: process.env.NODE_ENV !== "production" ? undefined : "export",
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        hostname: "images.unsplash.com",
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
     ],
   },
+  staticPageGenerationTimeout: 120,
 };
 
 module.exports = nextConfig;
