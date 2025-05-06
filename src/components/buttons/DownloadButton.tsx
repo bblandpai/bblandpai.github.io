@@ -16,23 +16,85 @@ const truncateLabel = (label: string, maxLength = 500): string => {
   return label.length > maxLength ? label.substring(0, maxLength) : label;
 };
 
+// Hàm này đảm bảo link sẽ thử cả serve và server nếu một trong hai không hoạt động
+const getFallbackLinks = (originalLink: string): string[] => {
+  const links = [originalLink];
+  
+  // Thử thay thế serve bằng server và ngược lại
+  if (originalLink.includes('serve.emulatorgames.net')) {
+    links.push(originalLink.replace('serve.emulatorgames.net', 'server.emulatorgames.net'));
+  } else if (originalLink.includes('server.emulatorgames.net')) {
+    links.push(originalLink.replace('server.emulatorgames.net', 'serve.emulatorgames.net'));
+  }
+  
+  return links;
+};
+
 const DownloadButton: React.FC<LoadingButtonProps> = ({ downloadLink, gameName }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [attemptCount, setAttemptCount] = useState(0);
+
+  const handleDownload = async (link: string) => {
+    return new Promise<void>((resolve, reject) => {
+      // Tạo một iframe ẩn để thử tải xuống
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+      
+      // Thiết lập timeout để xử lý trường hợp không tải được
+      const timeoutId = setTimeout(() => {
+        document.body.removeChild(iframe);
+        reject(new Error('Download timeout. Link might be unavailable.'));
+      }, 5000);
+      
+      iframe.onload = () => {
+        clearTimeout(timeoutId);
+        document.body.removeChild(iframe);
+        resolve();
+      };
+      
+      iframe.onerror = () => {
+        clearTimeout(timeoutId);
+        document.body.removeChild(iframe);
+        reject(new Error('Failed to load resource.'));
+      };
+      
+      iframe.src = link;
+      
+      // Mở tab mới với link tải
+      window.open(link, '_blank');
+    });
+  };
 
   const handleClick = async () => {
     sendGAEvent({ event: 'click_download', value: truncateLabel(gameName) });
-    // handle loading
     setIsLoading(true);
     setError(null);
+    
+    // Lấy danh sách các link dự phòng
+    const fallbackLinks = getFallbackLinks(downloadLink);
+    const currentLink = fallbackLinks[attemptCount % fallbackLinks.length];
+    
     try {
-      setIsLoading(true);
-      // Simulate a download process with a timeout
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      // Redirect to the download link
-      window.location.href = downloadLink;
-    } catch (error: any) { // Explicitly typing error as any
-      setError(error.message);
+      // Thử tải xuống
+      await handleDownload(currentLink);
+      
+      // Đã tải thành công, cập nhật số lần thử
+      setAttemptCount(prev => prev + 1);
+    } catch (error: any) {
+      console.error('Download error:', error);
+      
+      // Nếu còn link dự phòng và đây không phải lần thử cuối
+      if (attemptCount < fallbackLinks.length - 1) {
+        setError(`Trying alternative server... (${attemptCount + 1}/${fallbackLinks.length})`);
+        setAttemptCount(prev => prev + 1);
+        setTimeout(() => handleClick(), 1000); // Thử lại sau 1 giây
+        return;
+      } else {
+        // Đã thử tất cả các link và không thành công
+        setError("Download failed. Please try again later or try another game.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -74,7 +136,7 @@ const DownloadButton: React.FC<LoadingButtonProps> = ({ downloadLink, gameName }
       </button>
       {error && (
         <div className="mt-1 sm:mt-2 text-retro-pink text-center font-retro-text text-xs">
-          ERROR: {error}
+          {error}
         </div>
       )}
     </div>
