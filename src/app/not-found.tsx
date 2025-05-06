@@ -1,6 +1,11 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Not Found',

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import * as React from 'react';
 
 import './globals.css';
@@ -11,14 +11,15 @@ import { FACEBOOK_APP_ID } from '@/constant/env';
 import { ErrorProvider } from '@/context/ErrorContext';
 import { TrackingProvider } from '@/context/TrackingContext';
 
+export const viewport: Viewport = {
+  width: 'device-width, shrink-to-fit=yes',
+  minimumScale: 1,
+  initialScale: 1,
+  userScalable: false,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
-  viewport: {
-    width: 'device-width, shrink-to-fit=yes',
-    minimumScale: 1,
-    initialScale: 1,
-    userScalable: false,
-    maximumScale: 1,
-  },
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
