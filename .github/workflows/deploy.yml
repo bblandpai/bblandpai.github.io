@@ -68,10 +68,12 @@ jobs:
           static_site_generator: next
       - name: Build with Next.js
         run: pnpm next build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./out
+      - name: Upload Pages artifact (v2 safe)
+  uses: actions/upload-artifact@v2
+  with:
+    name: github-pages
+    path: ./out
+
 
   # Deployment job
   deploy:
