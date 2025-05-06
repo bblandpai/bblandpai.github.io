@@ -1,19 +1,9 @@
-'use client';
-
 import * as React from 'react';
-import { Suspense } from 'react';
-import '@/lib/env';
 
-import { Home } from '@/components/home';
+import ClientUpdatePage from '@/components/pages/UpdatePage';
 
-import { QueryParamsProvider } from '@/context/QueryParamsContext';
+export const dynamic = 'force-dynamic';
 
-export default function HomePage() {
-  return (
-    <Suspense fallback={<div className="text-center py-12">Loading...</div>}>
-      <QueryParamsProvider>
-        <Home isShowUpdate={true} />
-      </QueryParamsProvider>
-    </Suspense>
-  );
+export default function Page() {
+  return <ClientUpdatePage />;
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useCallback, useState, ReactNode } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface QueryParams {
@@ -18,24 +18,22 @@ interface QueryParamsProviderProps {
 
 export const QueryParamsProvider: React.FC<QueryParamsProviderProps> = ({ children }) => {
   const searchParams = useSearchParams();
-  const [queryParams, setQueryParams] = useState<QueryParams>({
-    userId: undefined,
-    gameName: undefined,
-    countryCode: undefined,
-    deviceType: undefined,
-  });
-
-  useEffect(() => {
-    setQueryParams({
+  
+  // Gọi trực tiếp các phương thức trong mỗi lần render
+  const getQueryParams = useCallback((): QueryParams => {
+    return {
       userId: searchParams.get('userId') || undefined,
       gameName: searchParams.get('gameName') || undefined,
       countryCode: searchParams.get('countryCode') || undefined,
       deviceType: searchParams.get('deviceType') || undefined,
-    });
+    };
   }, [searchParams]);
 
+  // Lấy giá trị một lần khi component mount
+  const params = getQueryParams();
+
   return (
-    <QueryParamsContext.Provider value={queryParams}>
+    <QueryParamsContext.Provider value={params}>
       {children}
     </QueryParamsContext.Provider>
   );
