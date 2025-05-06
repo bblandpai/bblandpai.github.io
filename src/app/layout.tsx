@@ -9,7 +9,7 @@ import RootLayoutContent from '@/components/layout/RootLayoutContent';
 import { siteConfig } from '@/constant/config';
 import { FACEBOOK_APP_ID } from '@/constant/env';
 import { ErrorProvider } from '@/context/ErrorContext';
-import { TrackingProvider } from '@/context/TrackingContext';
+import TrackingProviderWrapper from '@/components/TrackingProviderWrapper';
 
 export const viewport: Viewport = {
   width: 'device-width, shrink-to-fit=yes',
@@ -80,7 +80,7 @@ export default function RootLayout({
           </div>
         </header>
         
-        <TrackingProvider>
+        <TrackingProviderWrapper>
           <ErrorProvider>
             <RootLayoutContent>
               <div className="flex-grow flex flex-col items-center pt-20 sm:pt-24 px-4">
@@ -97,7 +97,7 @@ export default function RootLayout({
               </div>
             </RootLayoutContent>
           </ErrorProvider>
-        </TrackingProvider>
+        </TrackingProviderWrapper>
         {/* <Gtag/> */}
       </body>
       {FACEBOOK_APP_ID && (

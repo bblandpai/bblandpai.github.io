@@ -1,11 +1,11 @@
 'use client';
 
-import { GoogleAnalytics } from '@next/third-parties/google';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
 
 import ModalAlert from '@/components/modal';
+import GoogleAnalyticsWrapper from '@/components/GoogleAnalyticsWrapper';
 
 import { useError } from '@/context/ErrorContext';
 
@@ -24,7 +24,7 @@ const RootLayoutContent: React.FC<{ children: React.ReactNode }> = ({ children }
       />
       {children}
     </main>
-    <GoogleAnalytics gaId="G-95DQKE460W" />
+    <GoogleAnalyticsWrapper />
     </>
   );
 };
